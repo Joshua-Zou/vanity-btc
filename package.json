@@ -1,0 +1,17 @@
+{
+  "name": "vanity-btc",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "browserify": "17.0.0",
+    "bitcoinjs-lib": "5.2.0",
+    "webworkify": "1.5.0",
+    "identicon.js": "2.3.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU"
+}
