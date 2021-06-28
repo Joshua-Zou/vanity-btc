@@ -2,14 +2,18 @@
   "name": "vanity-btc",
   "description": "",
   "version": "1.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
-    "browserify": "17.0.0",
     "bitcoinjs-lib": "5.2.0",
-    "webworkify": "1.5.0",
-    "identicon.js": "2.3.3"
+    "identicon.js": "2.3.3",
+    "uglifyjs": "^2.4.11"
+  },
+  "devDependencies": {
+    "browserify": "17.0.0",
+    "uglify-js": "^3.13.10",
+    "webworkify": "1.5.0"
+  },
+  "scripts": {
+    "zip": "node .\\node_modules\\browserify\\index.js ./main.js -o bundle.js; node .\\node_modules\\uglify-js bundle.js --output bundle.min.js"
   },
   "keywords": [],
   "author": "",

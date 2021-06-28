@@ -2384,31 +2384,52 @@ function unwrapListeners(arr) {
 
 function once(emitter, name) {
   return new Promise(function (resolve, reject) {
-    function eventListener() {
-      if (errorListener !== undefined) {
+    function errorListener(err) {
+      emitter.removeListener(name, resolver);
+      reject(err);
+    }
+
+    function resolver() {
+      if (typeof emitter.removeListener === 'function') {
         emitter.removeListener('error', errorListener);
       }
       resolve([].slice.call(arguments));
     };
-    var errorListener;
 
-    // Adding an error listener is not optional because
-    // if an error is thrown on an event emitter we cannot
-    // guarantee that the actual event we are waiting will
-    // be fired. The result could be a silent way to create
-    // memory or file descriptor leaks, which is something
-    // we should avoid.
+    eventTargetAgnosticAddListener(emitter, name, resolver, { once: true });
     if (name !== 'error') {
-      errorListener = function errorListener(err) {
-        emitter.removeListener(name, eventListener);
-        reject(err);
-      };
-
-      emitter.once('error', errorListener);
+      addErrorHandlerIfEventEmitter(emitter, errorListener, { once: true });
     }
-
-    emitter.once(name, eventListener);
   });
+}
+
+function addErrorHandlerIfEventEmitter(emitter, handler, flags) {
+  if (typeof emitter.on === 'function') {
+    eventTargetAgnosticAddListener(emitter, 'error', handler, flags);
+  }
+}
+
+function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
+  if (typeof emitter.on === 'function') {
+    if (flags.once) {
+      emitter.once(name, listener);
+    } else {
+      emitter.on(name, listener);
+    }
+  } else if (typeof emitter.addEventListener === 'function') {
+    // EventTarget does not have `error` event semantics like Node
+    // EventEmitters, we do not listen for `error` events here.
+    emitter.addEventListener(name, function wrapListener(arg) {
+      // IE does not have builtin `{ once: true }` support so we
+      // have to do it manually.
+      if (flags.once) {
+        emitter.removeEventListener(name, wrapListener);
+      }
+      listener(arg);
+    });
+  } else {
+    throw new TypeError('The "emitter" argument must be of type EventEmitter. Received type ' + typeof emitter);
+  }
 }
 
 },{}],5:[function(require,module,exports){
@@ -6461,7 +6482,6 @@ function manageIncomingData(ev) {
         document.getElementById("statusIndic").innerText = "Found!";
         document.getElementById("stopButton").disabled = "disabled";
         document.getElementById("startButton").disabled = undefined;
-        console.log(res)
         document.getElementById("outputScr").innerText = res.secret;
         document.getElementById("outputAdr").innerText = res.address;
         document.getElementById("outputXpub").innerText = res.xPub;
@@ -6475,7 +6495,6 @@ function manageIncomingData(ev) {
         if (totalAdrs/percent*100 > 100) indic = "100%"
         document.getElementsByClassName("probability-bar")[0].style.width = indic;
         document.getElementById('probability-indic').innerText = ((totalAdrs/percent*100).toString().slice(0, 5)+"%")
-        console.log(totalAdrs/(window.startingTime*1000))
         document.getElementById("generationSpeed").innerText = totalAdrs/((Date.now()/1000 - window.startingTime/1000)); 
     }
 }
@@ -22116,21 +22135,27 @@ utils.intFromLE = intFromLE;
 
 },{"bn.js":104,"minimalistic-assert":149,"minimalistic-crypto-utils":150}],129:[function(require,module,exports){
 module.exports={
-  "_from": "elliptic@^6.4.0",
+  "_args": [
+    [
+      "elliptic@6.5.4",
+      "C:\\Users\\Joshua\\Documents\\coding\\vanity-btc"
+    ]
+  ],
+  "_from": "elliptic@6.5.4",
   "_id": "elliptic@6.5.4",
   "_inBundle": false,
   "_integrity": "sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==",
   "_location": "/elliptic",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "elliptic@^6.4.0",
+    "raw": "elliptic@6.5.4",
     "name": "elliptic",
     "escapedName": "elliptic",
-    "rawSpec": "^6.4.0",
+    "rawSpec": "6.5.4",
     "saveSpec": null,
-    "fetchSpec": "^6.4.0"
+    "fetchSpec": "6.5.4"
   },
   "_requiredBy": [
     "/browserify-sign",
@@ -22138,9 +22163,8 @@ module.exports={
     "/tiny-secp256k1"
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.4.tgz",
-  "_shasum": "da37cebd31e79a1367e941b592ed1fbebd58abbb",
-  "_spec": "elliptic@^6.4.0",
-  "_where": "C:\\Users\\Joshua\\Documents\\coding\\vanity-btc\\node_modules\\tiny-secp256k1",
+  "_spec": "6.5.4",
+  "_where": "C:\\Users\\Joshua\\Documents\\coding\\vanity-btc",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -22148,7 +22172,6 @@ module.exports={
   "bugs": {
     "url": "https://github.com/indutny/elliptic/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "bn.js": "^4.11.9",
     "brorand": "^1.1.0",
@@ -22158,7 +22181,6 @@ module.exports={
     "minimalistic-assert": "^1.0.1",
     "minimalistic-crypto-utils": "^1.0.1"
   },
-  "deprecated": false,
   "description": "EC cryptography",
   "devDependencies": {
     "brfs": "^2.0.2",
@@ -26488,7 +26510,7 @@ module.exports = function (fn, options) {
     var blob = new Blob([src], { type: 'text/javascript' });
     if (options && options.bare) { return blob; }
     var workerUrl = URL.createObjectURL(blob);
-    var worker = new Worker(workerUrl, options);
+    var worker = new Worker(workerUrl);
     worker.objectURL = workerUrl;
     return worker;
 };
@@ -26579,11 +26601,9 @@ onmessage = function(e) {
                 postMessage(JSON.stringify(datax))
             }
             let wallet = generateKeyPairs();
-            //console.log(wallet)
             let address = wallet.address;
             if (incoming.data.caseSensitive === false) address = address.toLowerCase();
-            if (incoming.data.anywhere === true){
-                if (address.includes(targetText)){
+            if (incoming.data.anywhere === true && address.includes(targetText)){
                     let data = {
                         status: "found",
                         address: wallet.address,
@@ -26591,11 +26611,8 @@ onmessage = function(e) {
                         xPub: wallet.publicKey
                     }
                     return postMessage(JSON.stringify(data))
-                }
             }else{
-                if (incoming.data.mode === "prefix"){
-                    //
-                    if (address.slice(1).startsWith(targetText)){
+                if (incoming.data.mode === "prefix" && address.slice(1).startsWith(targetText)){
                         let data = {
                             status: "found",
                             address: wallet.address,
@@ -26603,9 +26620,7 @@ onmessage = function(e) {
                             xPub: wallet.publicKey
                         }
                         return postMessage(JSON.stringify(data))
-                    }
-                }else{
-                    if (address.endsWith(targetText)){
+                }else if (address.endsWith(targetText)){
                         let data = {
                             status: "found",
                             address: wallet.address,
@@ -26613,7 +26628,6 @@ onmessage = function(e) {
                             xPub: wallet.publicKey
                         }
                         return postMessage(JSON.stringify(data))
-                    }
                 }
             }
         }
@@ -26623,7 +26637,6 @@ onmessage = function(e) {
   function generateKeyPairs() {
     const bitcoin = require("bitcoinjs-lib");
     const BitcoinjsNetwork = bitcoin.networks.bitcoin
-    /*It can generate a random address [and support the retrieval of transactions for that address (via 3PBP)*/
     const keyPair = bitcoin.ECPair.makeRandom({ network: BitcoinjsNetwork });
     const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey, network: BitcoinjsNetwork });
     const publicKey = keyPair.publicKey.toString("hex");

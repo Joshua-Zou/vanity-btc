@@ -16,11 +16,9 @@ onmessage = function(e) {
                 postMessage(JSON.stringify(datax))
             }
             let wallet = generateKeyPairs();
-            //console.log(wallet)
             let address = wallet.address;
             if (incoming.data.caseSensitive === false) address = address.toLowerCase();
-            if (incoming.data.anywhere === true){
-                if (address.includes(targetText)){
+            if (incoming.data.anywhere === true && address.includes(targetText)){
                     let data = {
                         status: "found",
                         address: wallet.address,
@@ -28,11 +26,8 @@ onmessage = function(e) {
                         xPub: wallet.publicKey
                     }
                     return postMessage(JSON.stringify(data))
-                }
             }else{
-                if (incoming.data.mode === "prefix"){
-                    //
-                    if (address.slice(1).startsWith(targetText)){
+                if (incoming.data.mode === "prefix" && address.slice(1).startsWith(targetText)){
                         let data = {
                             status: "found",
                             address: wallet.address,
@@ -40,9 +35,7 @@ onmessage = function(e) {
                             xPub: wallet.publicKey
                         }
                         return postMessage(JSON.stringify(data))
-                    }
-                }else{
-                    if (address.endsWith(targetText)){
+                }else if (address.endsWith(targetText)){
                         let data = {
                             status: "found",
                             address: wallet.address,
@@ -50,7 +43,6 @@ onmessage = function(e) {
                             xPub: wallet.publicKey
                         }
                         return postMessage(JSON.stringify(data))
-                    }
                 }
             }
         }
@@ -60,7 +52,6 @@ onmessage = function(e) {
   function generateKeyPairs() {
     const bitcoin = require("bitcoinjs-lib");
     const BitcoinjsNetwork = bitcoin.networks.bitcoin
-    /*It can generate a random address [and support the retrieval of transactions for that address (via 3PBP)*/
     const keyPair = bitcoin.ECPair.makeRandom({ network: BitcoinjsNetwork });
     const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey, network: BitcoinjsNetwork });
     const publicKey = keyPair.publicKey.toString("hex");

@@ -354,9 +354,7 @@
         if (window.vanity_settings.anywhere === true) {
             text = text.slice(0, text.length);
             beginningText = "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo".slice(0,5)
-            console.log(beginningText);
             let endingText = "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo".slice(text.length+5);
-            console.log(endingText)
             text = beginningText+"<u>"+orginialtext+"</u>"+endingText;
         }else{
             if (window.vanity_settings.mode === "suffix"){

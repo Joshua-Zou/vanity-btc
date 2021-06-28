@@ -48,7 +48,6 @@ function manageIncomingData(ev) {
         document.getElementById("statusIndic").innerText = "Found!";
         document.getElementById("stopButton").disabled = "disabled";
         document.getElementById("startButton").disabled = undefined;
-        console.log(res)
         document.getElementById("outputScr").innerText = res.secret;
         document.getElementById("outputAdr").innerText = res.address;
         document.getElementById("outputXpub").innerText = res.xPub;
@@ -62,7 +61,6 @@ function manageIncomingData(ev) {
         if (totalAdrs/percent*100 > 100) indic = "100%"
         document.getElementsByClassName("probability-bar")[0].style.width = indic;
         document.getElementById('probability-indic').innerText = ((totalAdrs/percent*100).toString().slice(0, 5)+"%")
-        console.log(totalAdrs/(window.startingTime*1000))
         document.getElementById("generationSpeed").innerText = totalAdrs/((Date.now()/1000 - window.startingTime/1000)); 
     }
 }
