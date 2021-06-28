@@ -2,6 +2,8 @@
 
 # A vanity BTC and LTC address generator
 
+### Use this in the [browser](https://www.vanity-btc.tk), or as a desktop [app](https://github.com/Joshua-Zou/vanity-btc/releases/tag/v1.3.1)
+
 ## What's a vanity address?
 
 A vanity address is an address which part of it is chosen by yourself, making it look less random.  
@@ -21,7 +23,7 @@ As explained above, everything is computed only in your browser or app. Nothing 
 - Once the web page is loaded, you can turn off the internet and continue playing, it will work seamlessly  
 - You can also download the latest build of Vanity-BTC  [here](https://github.com/Joshua-Zou/vanity-btc)  and use it on a completely offline computer  
 - The code is 100% open source and available on  [Github](https://github.com/Joshua-Zou/vanity-btc). You can review it as much as you want before using it 
-- You can download the desktop app, and use it offline forever, without needing an internet connection for loading the page or at all! 
+- You can [download](https://github.com/Joshua-Zou/vanity-btc/releases/tag/v1.3.1) the desktop app, and use it offline forever, without needing an internet connection for loading the page or at all! 
   
 
 ## Performance
