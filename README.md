@@ -1,5 +1,6 @@
 ![image](https://user-images.githubusercontent.com/77520157/123561829-8d743400-d75f-11eb-90fa-378c1f7d0011.png)
 
+# A vanity BTC and LTC address generator
 
 ## What's a vanity address?
 
