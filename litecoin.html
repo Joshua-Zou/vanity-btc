@@ -272,7 +272,7 @@
         padding: 0;
         font-family: Lato, sans-serif;
         background: #09c4c5;
-        background: linear-gradient(140deg, #88cbf5, #9e88f5, #88f5b2) !important;
+        background: linear-gradient(140deg, #88cbf5, #9e88f5, #88f5b2);
         background-attachment: fixed;
         font-size: 16px
     }
@@ -432,7 +432,7 @@ $('select').each(function(){
         var rotation = 0;
         while (true) {
             rotation++;
-            document.body.style.background = `linear-gradient(${rotation}deg, #F7931A, #301af7)`;
+            document.body.style.background = `linear-gradient(${rotation}deg, #88cbf5, #9e88f5, #88f5b2)`;
             if (rotation === 360) rotation = 0;
             await sleep(50)
         }
