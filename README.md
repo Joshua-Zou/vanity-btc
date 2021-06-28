@@ -15,17 +15,18 @@ You can increase the number of working threads to reach higher speeds, or decrea
 
 ## Security
 
-As explained above, everything is computed only in your browser. Nothing ever leaves your machine, or even your browser tab. There is no database, no server-side code. Everything vanishes when you close your tab.  
+As explained above, everything is computed only in your browser or app. Nothing ever leaves your machine, or even your browser tab. There is no database, no server-side code. Everything vanishes when you close your tab or app.  
   
 **Vanity-BTC cannot and will never store your private key**, and if you don't trust it, you have 3 ways to ensure your key remains private:  
 - Once the web page is loaded, you can turn off the internet and continue playing, it will work seamlessly  
 - You can also download the latest build of Vanity-BTC  [here](https://github.com/Joshua-Zou/vanity-btc)  and use it on a completely offline computer  
-- The code is 100% open source and available on  [Github](https://github.com/Joshua-Zou/vanity-btc). You can review it as much as you want before using it  
+- The code is 100% open source and available on  [Github](https://github.com/Joshua-Zou/vanity-btc). You can review it as much as you want before using it 
+- You can download the desktop app, and use it offline forever, without needing an internet connection for loading the page or at all! 
   
 
 ## Performance
 
-For some reason, the performance of Vanity-BTC can vary a lot from a browser to another. Currently, Chrome provides the best results.  
+For some reason, the performance of Vanity-BTC can vary a lot from a browser to another. Currently, The Desktop App provides the best results with the most security, but for browsers, chrome comes in at a close second.  
 Using Vanity-BTC on your phone or tablet will work, but don't expect to reach the speed of a good old (super) computer.
 
 ## Compatibility
