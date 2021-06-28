@@ -5,7 +5,8 @@
   "dependencies": {
     "bitcoinjs-lib": "5.2.0",
     "identicon.js": "2.3.3",
-    "uglifyjs": "^2.4.11"
+    "uglifyjs": "^2.4.11",
+    "litecore-lib": "0.13.22"
   },
   "devDependencies": {
     "browserify": "17.0.0",
@@ -13,7 +14,8 @@
     "webworkify": "1.5.0"
   },
   "scripts": {
-    "zip": "node .\\node_modules\\browserify\\index.js ./main.js -o bundle.js; node .\\node_modules\\uglify-js bundle.js --output bundle.min.js"
+    "btc-zip": "node .\\node_modules\\browserify\\index.js ./main.js -o bundle.js; node .\\node_modules\\uglify-js bundle.js --output bundle.min.js",
+    "ltc-zip": "node .\\node_modules\\browserify\\index.js ./ltcOrigin.js -o ltcBundle.js; node .\\node_modules\\uglify-js\\tools\\node.js ltcBundle.js --output ltcBundle.min.js"
   },
   "keywords": [],
   "author": "",
