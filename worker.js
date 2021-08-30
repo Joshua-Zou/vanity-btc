@@ -35,7 +35,7 @@ onmessage = function(e) {
                             xPub: wallet.publicKey
                         }
                         return postMessage(JSON.stringify(data))
-                }else if (address.endsWith(targetText)){
+                }else if (incoming.data.mode === "suffix" && address.endsWith(targetText)){
                         let data = {
                             status: "found",
                             address: wallet.address,
