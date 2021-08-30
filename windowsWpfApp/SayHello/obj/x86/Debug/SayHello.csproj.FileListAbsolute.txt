@@ -1,0 +1,50 @@
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\App.xbf
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\MainPage.xbf
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\resources.pri
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\AppxManifest.xml
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Core\SayHello.exe
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\SayHello.build.appxrecipe
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\System.Runtime.dll
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\SayHello.csprojAssemblyReference.cache
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\App.g.i.cs
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\App.g.cs
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\MainPage.g.cs
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\App.xaml
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\MainPage.xaml
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\App.xbf
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\MainPage.xbf
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\SayHello.csproj.CoreCompileInputs.cache
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\SayHello.csproj.CopyComplete
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\priconfig.xml
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\resources.resfiles
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\pri.resfiles
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\qualifiers.txt
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885598160000000.json
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\NBitcoin.dll
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\Microsoft.Extensions.Logging.Abstractions\en-us\Microsoft.Extensions.Logging.Abstractions.Resource.resw
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Vanity Btc.xr.xml
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Vanity Btc.exe
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Vanity Btc.pdb
+C:\Users\Joshua\source\repos\SayHello\SayHello\bin\x86\Debug\Core\Vanity Btc.exe
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\Vanity Btc.exe
+C:\Users\Joshua\source\repos\SayHello\SayHello\obj\x86\Debug\Vanity Btc.pdb
