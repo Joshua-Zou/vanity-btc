@@ -59,8 +59,8 @@ namespace Vanity_BTC
             this.errorMsg = new System.Windows.Forms.Label();
             this.GenerateBtn = new System.Windows.Forms.Button();
             this.stopBtn = new System.Windows.Forms.Button();
-            this.addressIndic = new System.Windows.Forms.Label();
-            this.secretIndic = new System.Windows.Forms.Label();
+            this.addressIndic = new System.Windows.Forms.TextBox();
+            this.secretIndic = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.threadCount)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -350,18 +350,22 @@ namespace Vanity_BTC
             // 
             // addressIndic
             // 
-            this.addressIndic.AutoSize = true;
-            this.addressIndic.Location = new System.Drawing.Point(113, 29);
+            this.addressIndic.BackColor = System.Drawing.SystemColors.Window;
+            this.addressIndic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.addressIndic.Location = new System.Drawing.Point(113, 27);
             this.addressIndic.Name = "addressIndic";
-            this.addressIndic.Size = new System.Drawing.Size(0, 13);
+            this.addressIndic.ReadOnly = true;
+            this.addressIndic.Size = new System.Drawing.Size(430, 13);
             this.addressIndic.TabIndex = 2;
             // 
             // secretIndic
             // 
-            this.secretIndic.AutoSize = true;
+            this.secretIndic.BackColor = System.Drawing.SystemColors.Window;
+            this.secretIndic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.secretIndic.Location = new System.Drawing.Point(127, 58);
             this.secretIndic.Name = "secretIndic";
-            this.secretIndic.Size = new System.Drawing.Size(0, 13);
+            this.secretIndic.ReadOnly = true;
+            this.secretIndic.Size = new System.Drawing.Size(430, 13);
             this.secretIndic.TabIndex = 3;
             // 
             // Form1
@@ -439,8 +443,8 @@ namespace Vanity_BTC
         private System.Windows.Forms.Label errorMsg;
         private System.Windows.Forms.Button GenerateBtn;
         private System.Windows.Forms.Button stopBtn;
-        private System.Windows.Forms.Label addressIndic;
-        private System.Windows.Forms.Label secretIndic;
+        private System.Windows.Forms.TextBox addressIndic;
+        private System.Windows.Forms.TextBox secretIndic;
     }
 }
 
