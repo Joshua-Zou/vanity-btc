@@ -14,8 +14,8 @@
     <meta property="og:description" content="Vanity-BTC is an open source generator using your web browser to generate Bitcoin
     vanity addresses. You can get a custom BTC vanity address right now without the need to install any software!
     After Vanity-BTC generates an address, it will create a wallet compatible with any BTC wallet!">
-    <link rel="canonical" href="https://vanity-btc.tk/">
-    <meta property="og:url" content="https://vanity-btc.tk/">
+    <link rel="canonical" href="https://joshua-zou.github.io/vanity-btc/">
+    <meta property="og:url" content="https://joshua-zou.github.io/vanity-btc/">
     <meta property="og:site_name" content="Vanity BTC">
     <meta name="google-site-verification" content="DFWJVWz9IRrh-wjBxn0Y8ith5FTqMeJTSUtuJ595BEs">
     <!--[if IE]><link rel="icon" type="image/x-icon" href="favicon.ico" /><![endif]-->
